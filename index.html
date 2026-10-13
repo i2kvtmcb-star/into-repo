@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Header</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Hello, World!</p>
-    <p>This is a sample HTML document.</p>
-    <p>It contains a few paragraphs of text to demonstrate the structure of an HTML page.</p>
-    <p>Feel free to modify this template to suit your needs.</p>
-    <p>Thank you for visiting!</p>
-    <p>aaaaaaaaaaaa</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">MySite</div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">サービス</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <a class="cta-button" href="#">無料相談</a>
+        </div>
+    </header>
+
+    <main class="container hero">
+        <p>Hello, World!</p>
+        <p>This is a sample HTML document.</p>
+        <p>It contains a few paragraphs of text to demonstrate the structure of an HTML page.</p>
+        <p>Feel free to modify this template to suit your needs.</p>
+        <p>Thank you for visiting!</p>
+    </main>
 </body>
 </html>
