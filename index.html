@@ -12,5 +12,312 @@
     <p>Feel free to modify this template to suit your needs.</p>
     <p>Thank you for visiting!</p>
     <p>aaaaaaaaaaaa</p>
+    <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンプルページ</title>
+    <style>
+        :root {
+            --bg-1: #070b1a;
+            --bg-2: #10192d;
+            --panel: rgba(17, 24, 39, 0.72);
+            --panel-border: rgba(255, 255, 255, 0.12);
+            --text: #edf3ff;
+            --muted: #a9b5d1;
+            --primary: #7c9bff;
+            --secondary: #8ef2ff;
+            --accent: #ff5fd2;
+            --shadow: rgba(124, 155, 255, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            font-family: Inter, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(124, 155, 255, 0.18), transparent 22%),
+                radial-gradient(circle at 80% 30%, rgba(255, 95, 210, 0.18), transparent 25%),
+                linear-gradient(135deg, var(--bg-1), var(--bg-2));
+            color: var(--text);
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+            padding: 80px 24px 40px;
+        }
+
+        .site-footer {
+            position: relative;
+            padding: 28px 24px 18px;
+            margin-top: auto;
+            background: rgba(9, 13, 22, 0.7);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            overflow: hidden;
+        }
+
+        .site-footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, transparent, rgba(124,155,255,0.09), transparent),
+                radial-gradient(circle at left center, rgba(142,242,255,0.18), transparent 30%);
+            pointer-events: none;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+            gap: 28px;
+            padding-bottom: 26px;
+        }
+
+        .brand-block {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .brand-mark {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary), var(--accent));
+            box-shadow: 0 0 18px rgba(142, 242, 255, 0.8);
+        }
+
+        .brand-copy {
+            max-width: 340px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0;
+            font-size: 0.96rem;
+        }
+
+        .footer-title {
+            margin: 0 0 12px;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text);
+            opacity: 0.8;
+            transition: 0.2s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(4px);
+        }
+
+        .cta-box {
+            padding: 18px 18px 16px;
+            border: 1px solid var(--panel-border);
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(124,155,255,0.12), rgba(142,242,255,0.06), rgba(255,95,210,0.06));
+            box-shadow: 0 18px 48px rgba(10, 14, 26, 0.5);
+        }
+
+        .cta-box p {
+            margin: 0 0 14px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #071120;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            box-shadow: 0 14px 30px rgba(124, 155, 255, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 36px rgba(142, 242, 255, 0.4);
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            text-decoration: none;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.2s ease;
+        }
+
+        .socials a:hover {
+            background: linear-gradient(135deg, rgba(124,155,255,0.2), rgba(255,95,210,0.2));
+            border-color: rgba(142,242,255,0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 0 18px rgba(124,155,255,0.25);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.65);
+            font-size: 0.85rem;
+        }
+
+        .tiny {
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 900px) {
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>ようこそ</h1>
+        <p>これはサンプルのHTMLページです。</p>
+        <p>段落を使って、ページの構造や見出しの使い方を確認できます。</p>
+        <p>必要に応じて、このテンプレートを自由に変更して使ってください。</p>
+        <p>ご訪問いただきありがとうございます。</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="brand-block">
+                    <div class="brand">
+                        <span class="brand-mark"></span>
+                        <span>Nova</span>
+                    </div>
+                    <p class="brand-copy">
+                        未来を見据えるデザインと技術で、ただの見た目じゃなくて、記憶に残る体験をつくる。
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Work</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Journal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Studio</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">Let’s build</h3>
+                    <div class="cta-box">
+                        <p>次のプロジェクトを、見た瞬間に“やばい”と思わせるデザインで始めよう。</p>
+                        <a href="#" class="cta-button">Start a project →</a>
+                        <div class="socials">
+                            <a href="#" aria-label="X">X</a>
+                            <a href="#" aria-label="Instagram">◎</a>
+                            <a href="#" aria-label="Dribbble">◌</a>
+                            <a href="#" aria-label="GitHub">⌁</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="tiny">© 2026 Nova Creative</div>
+                <div>crafted for the bold.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
 </body>
 </html>
